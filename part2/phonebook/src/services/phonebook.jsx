@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'http://localhost:3000/persons/'
+const baseURL = 'http://localhost:3000/api/persons/'
 
 function getAll() {
   return axios
@@ -23,7 +23,7 @@ function remove(person) {
 function update(person) {
   return axios
     .put(baseURL + person.id, person)
-    .then(res => console.log(res) || res.data);
+    .then(res => res.data);
 }
 
 export default { getAll, add, remove, update };
